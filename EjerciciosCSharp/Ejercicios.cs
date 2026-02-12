@@ -20,11 +20,17 @@ namespace EjerciciosCSharp
             // 4. El formato de cada línea debe ser: "numero x i = resultado\n"
             // Ejemplo: Si numero = 5, una línea sería: "5 x 1 = 5\n"
             
-            string resultado = "";
+            string resultado = "";  
+    
+        for (int i = 1; i <= 12; i++)
+        {
+        resultado += $"{numero} x {i} = {numero * i}\n";
+        }
+    
+    return resultado;
             
-            // TU CÓDIGO AQUÍ
+                
             
-            return resultado;
         }
 
         /// <summary>
@@ -43,14 +49,20 @@ namespace EjerciciosCSharp
             // 3. La condición del while debe verificar si la entrada NO es igual a claveSecreta
             // 4. Cuenta los intentos con una variable contador
             // 5. El bucle debe ejecutarse AL MENOS una vez (por eso es do-while)
-            
             string claveSecreta = "1234";
-            int intentos = 0;
-            string entrada = "";
+    int intentos = 0;
+    string entrada = "";
+    
+    do
+    {
+        entrada = obtenerInput();
+        intentos++;
+    } while (entrada != claveSecreta);
+    
+    return intentos;
+          
             
-            // TU CÓDIGO AQUÍ (usa do-while)
             
-            return intentos;
         }
 
         /// <summary>
@@ -71,10 +83,16 @@ namespace EjerciciosCSharp
             // 5. Retorna el acumulador al final
             
             int suma = 0;
+    
+    foreach (int numero in numeros)
+    {
+        if (numero == 0)
+            break;
+        suma += numero;
+    }
+    
+    return suma;
             
-            // TU CÓDIGO AQUÍ (usa while o foreach con break)
-            
-            return suma;
         }
 
         /// <summary>
@@ -94,8 +112,14 @@ namespace EjerciciosCSharp
             // Formato esperado: "0, 2, 4, 6, 8, ..."
             
             string resultado = "";
+
+            for (int i = 0; i <= 50; i += 2)
             
-            // TU CÓDIGO AQUÍ (usa for con i+=2)
+    {
+        if (i > 0)
+            resultado += ", ";
+            resultado += i;
+    }
             
             return resultado;
         }
